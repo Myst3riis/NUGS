@@ -1,9 +1,13 @@
-:
+#!/bin/bash
 ## N.U.G.S. est une intelligence artificielle ultra développée qui répond à toutes vos questions !
 
 erreur(){
 echo "T'as vu comment tu me parles ?"
 echo "Je suis pas un robot, écris normalement !"
+}
+
+syst(){
+echo " "
 }
 
 chepa(){
@@ -80,6 +84,10 @@ echo ${arr[$rand]}
 #echo "oui"
 }
 
+ouiQuestion(){
+echo "oui ?"
+}
+
 helpfct(){
 echo "Demandez quelque chose à Nugs, et... bonne chance ! Vous pouvez :
 - lui poser un calcl
@@ -104,9 +112,11 @@ case "$option" in
 [oO]ui*) oui;;
 [aA]vecplaisir*) oui;;
 [nN]on*) non;;
+[nN]ugs?) ouiQuestion;;
 [a-zA-Z.]*[?]) question;;
 [a-zA-Z.]*) pascompri;;
 --help) helpfct;;
 [0-9]*) chepa;;
-[\\\[\]\{\}\$\*\µ\:\!\&\#\^\%]*) erreur;;
+[\[]*) syst;;
+[\\\]\{\}\$\*\µ\:\!\&\#\^\%]*) erreur;;
 esac

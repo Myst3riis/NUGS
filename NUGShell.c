@@ -51,12 +51,12 @@ int main(int argc, char* argv[]){
         if (fork()== 0){
             if (record == 1){
                 // records the conversation in a file
-                printf("ON RECORD\n");
+                printf("\x1B[31m""NUGS>\n");
                 execvp(args[0],args);
                 exit(0);
             }else{
                 // normal conversation, not recorded
-                printf("NORMAL\n");
+                printf("\x1B[0m" "NUGS>\n");
                 execvp(args[0],args);
                 exit(0);
             }
