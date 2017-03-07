@@ -108,5 +108,5 @@ case "$option" in
 [a-zA-Z.]*) pascompri;;
 --help) helpfct;;
 [0-9]*) chepa;;
-[\\\$\*\µ\:\!\&\#\^\%]*) erreur;;
+[\\\[\]\{\}\$\*\µ\:\!\&\#\^\%]*) erreur;;
 esac
