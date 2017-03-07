@@ -1,5 +1,5 @@
 :
-## N.U.G.S. est une intelligence artificielle untra développée qui répond à toutes vos questions !
+## N.U.G.S. est une intelligence artificielle ultra développée qui répond à toutes vos questions !
 
 erreur(){
 echo "T'as vu comment tu me parles ?"
