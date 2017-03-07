@@ -17,6 +17,7 @@ int main(int argc, char* argv[]){
     printf("#  ##  #  #  #  #    #\n");
     printf("#   #   ##    ##   ##\n");
     int record = 0;
+    int fd = open("Conversations.txt", O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
     while (count < 1){
         printf("> ");
         fflush(stdout); //Allow display on every shell
@@ -51,6 +52,10 @@ int main(int argc, char* argv[]){
         if (fork()== 0){
             if (record == 1){
                 // records the conversation in a file
+                dup2(fd, 1); // write stdout in file
+                dup2(fd, 2); // write stderr in file
+                close(fd);
+
                 printf("\x1B[31m""NUGS>\n");
                 execvp(args[0],args);
                 exit(0);
